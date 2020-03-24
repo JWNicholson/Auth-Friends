@@ -7,21 +7,17 @@ import Home from './components/Home';
 import FriendList from './components/FriendList';
 import AddFriend from './components/AddFriend';
 
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <Route path='/' component={Header} />
+    <div>
+    <Route path='/' component={Header} />
     <Switch>
-    <PrivateRoute exact path='/' component={Home} />
-    {/** route to Login page */}
-    <Route path='login' component={Login} />
-    <PrivateRoute path='/add' component={AddFriend} />
-    <PrivateRoute path=  '/friends' component={FriendList} />
+      <PrivateRoute exact path='/' component={Home} />
+      <Route path='/login' component={Login} />
+      <PrivateRoute path="/add" component={AddFriend} />
+      <PrivateRoute path="/friends" component={FriendList} />
     </Switch>
-    </header>
     </div>
   );
 }

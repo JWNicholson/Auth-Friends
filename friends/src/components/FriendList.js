@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Friend from './Friend';
-import { getFriends } from '../actions';
+import { getFriends } from '../actions/actions';
 
 class FriendList extends React.Component {
 

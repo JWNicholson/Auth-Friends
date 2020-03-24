@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import friendReducer from './reducers/friendReducer';
 import App from './App';
+import './index.css';
 
 
 const store = createStore(friendReducer, applyMiddleware(thunk));
