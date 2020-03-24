@@ -8,14 +8,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Friends App</h1>
-      </header>
-
+       <Route path='/' component={Header} />
+    <Switch>
+    <PrivateRoute exact path='/' component={Home} />
     {/** route to Login page */}
     <Route path='login' component={Login} />
-
-
-
+    <PrivateRoute path='/add' component={AddFriend} />
+    <PrivateRoute path=  '/friends' component={FriendList} />
+    </Switch>
+    </header>
     </div>
   );
 }
