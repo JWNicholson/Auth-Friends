@@ -3,6 +3,22 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Friend from './Friend';
 import { getFriends } from '../actions/actions';
+import styled from "styled-components";
+
+const FriendsButton = styled.button`
+    background-color:cyan;
+    border:4px solid darkcyan;
+    font-size: 16px;
+    height:38px;
+    font-weight:bold;
+`;
+
+const FriendsList = styled.div`
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    width:90%;
+`;
 
 class FriendList extends React.Component {
 
@@ -20,15 +36,15 @@ class FriendList extends React.Component {
 
                 {this.props.isFetching && <p className="props-fetching">Fetching friends</p>}
                 {this.props.friends &&
-                    <div className="friend-list">
+                    <FriendsList>
                         <div className="header">
                             <h2>Friend List</h2>
-                            <Link to='/add'><button>Add a friend</button></Link>
+                            <Link to='/add'><FriendsButton>Add a friend</FriendsButton></Link>
                         </div>
                         {this.props.friends.map(friend => (
                             <Friend key={friend.id} name={friend.name} age={friend.age} email={friend.email} />
                         ))}
-                    </div>
+                    </FriendsList>
                 }
 
             </div>
