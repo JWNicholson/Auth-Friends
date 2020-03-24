@@ -1,5 +1,5 @@
 import React, { useState }  from 'react';
-import { axiosWithAuth } from '..utils/axiosWithAuth';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 export default function Login(props) {
 
@@ -41,7 +41,7 @@ return (
             type="password" 
             name="password" 
             placeholder="password" 
-            onChange={handleChange}
+            onChange={handleSubmit}
             value={credentials.password}
             />
 
